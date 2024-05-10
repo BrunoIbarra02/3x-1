@@ -1,0 +1,39 @@
+// Computacion Algorithm for 3n+1 //
+
+#include <stdio.h>
+// Main Algoritm //
+int recursive (int result, int odd)
+	{
+		switch (result)
+		{
+			case 1:
+				break;
+			default:
+			if (result%2 == 0)
+			{
+				result = result/2;
+				printf("- %d \n", result);
+				recursive (result, odd);	
+			}
+			else
+			{
+				result = odd*result + 1;
+				printf("- %d \n", result);
+				recursive (result, odd);	
+			}	
+		}
+	}
+// Main //
+int main ()
+{
+	int aux=0;
+	int aux_1=0;
+	printf("Please insert the algorithms incial condicion: \n");
+	scanf("%d", &aux);
+	printf("Please insert the odd number for the algotithm: \n");
+	scanf("%d", &aux_1);
+	aux = aux_1*aux + 1;
+	printf("- %d \n", aux);
+	recursive(aux, aux_1);
+	return 0;
+}
